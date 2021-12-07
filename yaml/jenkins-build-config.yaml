@@ -6,7 +6,7 @@ spec:
     runPolicy: "Serial"
     source:
         git:
-            uri: "https://github.com/UCBoulder/iam-jenkins-on-openshift"
+            uri: "https://github.com/sdonep/jenkins-ruby-openshift"
             ref: "main"
     strategy:
         dockerStrategy:
