@@ -1,0 +1,8 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+    name: jenkins
+    namespace: oit-iam-builder
+status:
+    tag: latest
+
