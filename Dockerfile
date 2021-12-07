@@ -6,10 +6,10 @@ FROM registry.redhat.io/openshift4/ose-jenkins-agent-base as base
 USER root
 #RUN yum install -y jenkins-plugin-openshift openshift-origin-cartridge-jenkins
 COPY run_ucb.sh /usr/local/bin/run.sh
-RUN cp -p /usr/libexec/s2i/run /usr/libexec/s2i/run.orig
-RUN rm -f /usr/libexec/s2i/run
-COPY run_ucb.sh /usr/libexec/s2i/run
-RUN chmod 755 /usr/libexec/s2i/run
+#RUN cp -p /usr/libexec/s2i/run /usr/libexec/s2i/run.orig
+#RUN rm -f /usr/libexec/s2i/run
+#COPY run_ucb.sh /usr/libexec/s2i/run
+#RUN chmod 755 /usr/libexec/s2i/run
 RUN chmod 755 /usr/local/bin/run.sh
 # install RVM, Ruby, and Bundler
 RUN \curl -L https://get.rvm.io | bash -s stable
