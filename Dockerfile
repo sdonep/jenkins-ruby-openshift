@@ -14,7 +14,6 @@ RUN chmod 755 /usr/local/bin/run.sh
 # install RVM, Ruby, and Bundler
 RUN yum -y install gnupg2
 RUN yum -y install dirmngr
-RUN gpg2 --recv-keys <key>
 RUN \curl -L https://get.rvm.io | bash -s stable
 RUN /bin/bash -l -c "rvm requirements"
 RUN /bin/bash -l -c "rvm install 2.0"
