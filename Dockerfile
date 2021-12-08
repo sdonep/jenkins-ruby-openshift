@@ -12,12 +12,11 @@ COPY run_ucb.sh /usr/local/bin/run.sh
 #RUN chmod 755 /usr/libexec/s2i/run
 RUN chmod 755 /usr/local/bin/run.sh
 # install RVM, Ruby, and Bundler
-RUN yum update && \
-    yum install -y procps curl ca-certificates gnupg2 build-essential --no-install-recommends && yum clean
-
-RUN gpg2 --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
-RUN curl -sSL https://get.rvm.io | bash -s
-RUN /bin/bash -l -c ". /etc/profile.d/rvm.sh && rvm install 2.3.3"
+RUN yum update
+RUN yum install ruby
+#RUN gpg2 --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+#RUN curl -sSL https://get.rvm.io | bash -s
+#RUN /bin/bash -l -c ". /etc/profile.d/rvm.sh && rvm install 2.3.3"
 
 WORKDIR /usr/lib/jenkins/
 RUN rm -f jenkins.war && \
