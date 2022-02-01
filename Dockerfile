@@ -12,7 +12,7 @@ ENV APP_ROOT=/usr/src/app \
 
 # pipenv complains if you don't install which
 RUN dnf install -y which ${PYTHON_PKG}{,-devel,-setuptools,-pip}
-RUN dnf install ruby
+RUN dnf install -y ruby
 
 WORKDIR ${APP_ROOT}
 
