@@ -1,1 +1,1 @@
-# jenkins-ruby-openshift
+# iam-jenkins-on-openshift

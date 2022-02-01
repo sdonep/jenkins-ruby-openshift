@@ -1,0 +1,17 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+    name: "jenkins-build-config"
+spec:
+    runPolicy: "Serial"
+    source:
+        git:
+            uri: "https://github.com/sdonep/jenkins-ruby-openshift"
+            ref: "main"
+    strategy:
+        dockerStrategy:
+            dockerfilePath: "Dockerfile"
+    output:
+        to:
+            kind: "ImageStreamTag"
+            name: "jenkins:latest"
